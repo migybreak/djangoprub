@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('');
+    background-repeat: no-repeat; /* Optional: Specify if the image should repeat */
+    background-size: cover;
+}

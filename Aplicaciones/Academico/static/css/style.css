@@ -1,0 +1,195 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgb(154, 231, 227) 0%, #40c3e4 100%);
+}
+
+.middle-section {
+    height: 50vh; /* Ajusta la altura según tus necesidades */
+    background-image: url('{% static "imagen/ojo.jpeg" %}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.search {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search i {
+    font-size: 25px;
+    color: #111;
+}
+
+.search-txt {
+    display: flex;
+    align-items: center;
+}
+
+.search-txt i {
+    font-size: 40px;
+    color: #f8010a;
+}
+
+.search-txt h2 {
+    color: #111;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.movies {
+    padding: 50px 0 150px 0;
+}
+
+.movies h2 {
+    font-size: 25 px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.icons {
+    padding: 0 350px 50px 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons i {
+    font-size: 25px;
+    color: #111;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons i:hover {
+    color: #f8010a;
+    background-color: #fefefe;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+@media(max-width:991px) {
+    body {
+      min-height: 0vh;
+    }
+
+    .search {
+        padding: 30px 30px 0 30px;
+    }
+
+    .movies {
+        padding: 30px;
+    }
+
+    .icons {
+        padding: 30px;
+    }
+}
+
+
+
+
+
+/*Botones de las imagenes*/
+
+
+.swiper-slide {
+    /* Estilos generales para el contenedor de cada elemento */
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin: 10px; /* Añade espacio entre elementos */
+    position: relative;
+}
+
+.image-container {
+    display: inline-block;
+    position: relative; /* Permite posicionar el botón de selección relativo a este contenedor */
+}
+
+.image-container img {
+    max-width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+    border-radius: 10px; /* Redondea las esquinas de la imagen */
+}
+
+.select-button {
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior de la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Redondea las esquinas del botón de evaluación */
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s; /* Agregamos transiciones para cambiar los estilos en hover */
+}
+
+.select-button:disabled {
+    background-color: #ccc; /* Estilo para el botón deshabilitado */
+}
+
+.select-button:hover {
+    background-color: #fefefe; /* Cambia el fondo en hover */
+    color: #f8010a; /* Cambia el color de texto en hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Agrega sombra en hover */
+}
+
+.evaluate-button {
+    display: block;
+    margin: 0 auto; /* Centra el botón de evaluación horizontalmente */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Redondea las esquinas del botón de evaluación */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s; /* Agregamos transiciones para cambiar los estilos en hover */
+
+    .evaluate-button:hover {
+        background-color: #fefefe; /* Cambia el fondo en hover */
+        color: #007BFF; /* Cambia el color de texto en hover */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Agrega sombra en hover */
+    }
+}
+
+
+
+
+
+
+

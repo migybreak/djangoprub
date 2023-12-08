@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Nuevos{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevas carreras</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/bg.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+
+<body>
+
+    <section class="search container">
+
+        <div class="search-txt">
+            <i class="fa-brands fa-youtube"></i>
+            <h2>Ingeniería Informática</h2>
+        </div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+
+    </section>
+
+    <section class="movies container">
+
+        <h2>¡Nueva!</h2>
+
+        <div class="swiper mySwiper" id="mySwiper1">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide" data-selected="false">
+                    <div class="image-container">
+                        <img src="{% static 'imagen/11.jpg' %}" alt="">
+                        <button class="select-button">Seleccionar</button>
+                    </div>
+                </div>
+                <div class="swiper-slide" data-selected="false">
+                    <div class="image-container">
+                        <img src="{% static 'imagen/01.jpg' %}" alt="">
+                        <button class="select-button">Seleccionar</button>
+                    </div>
+                </div>
+                
+                </div>
+                <div class="swiper-slide" data-selected="false">
+                    <div class="image-container">
+                        <img src="{% static 'imagen/11.jpg' %}" alt="">
+                        <button class="select-button">Seleccionar</button>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" data-selected="false">
+                    <div class="image-container">
+                        <img src="{% static 'imagen/55.jpg' %}" alt="">
+                        <button class="select-button">Seleccionar</button>
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+
+    </section>
+
+        
+
+    </section>
+
+    <section class="icons container">
+        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        <i class="fa-solid fa-ticket"></i>
+        <i class="fa-solid fa-folder"></i>
+        <i class="fa-solid fa-video"></i>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+    <script>
+
+// Función para obtener un efecto de manera aleatoria
+
+    var swiper = new Swiper('.mySwiper', {
+        effect: 'cube',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+    });
+    
+    
+    //Botones de las imagenes
+    
+    
+    // Obtener todas las imágenes y botones
+    const images = document.querySelectorAll('.swiper-slide');
+    const selectButtons = document.querySelectorAll('.select-button');
+    const evaluateButton = document.querySelector('.evaluate-button');
+    
+    // Variable para almacenar la imagen seleccionada actualmente
+    let selectedImage = null;
+    
+    // Agregar un manejador de eventos a los botones de selección
+    selectButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            if (selectedImage) {
+                // Deseleccionar la imagen previamente seleccionada
+                selectedImage.setAttribute('data-selected', 'false');
+                // Habilitar el botón de selección previamente seleccionado
+                const prevSelectedButton = selectButtons[Array.from(images).indexOf(selectedImage)];
+                prevSelectedButton.disabled = false;
+            }
+            
+            // Cambiar el estado seleccionado de la imagen
+            images[index].setAttribute('data-selected', 'true');
+            selectedImage = images[index];
+            // Deshabilitar el botón de selección
+            button.disabled = true;
+        });
+    });
+    
+    
+</script>
+
+
+</body>
+</html>
+{% endblock %}

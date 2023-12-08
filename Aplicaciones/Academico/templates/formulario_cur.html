@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    <form action="{% url 'editarCurso' %}" method="POST">{% csrf_token %}
+        <div class="form-group">
+            <input type="text" id="txtCodigo" name="txtCodigo" value="{{curso.codigo}}" class="form-control" placeholder="Código" minlength="8" maxlength="9" readonly required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="txtNombre" name="txtNombre" value="{{curso.nombre}}" class="form-control" placeholder="Nombre" maxlength="50" required>
+        </div>
+        <div class="form-group">
+            <select id="numCreditos" name="numCreditos" class="form-control" class="campo-select">
+                <!-- Opciones para el campo de selección -->
+                <option selected>DESARROLLO DE UN CRUD DE 0 A 100 CON DJANGO</option>
+                <option>TECNOLOGÍAS INALÁMBRICAS Y REDES SOCIALES</option>
+                <option>MICROFRAMEWORKS PARA FRONT END</option>
+                <option>DESARROLLO DE INVESTIGACIÓN E INNOVACIÓN</option>
+                <option>ADMINISTRACIÓN DE VERSIONES CON GIT</option>
+                <option>DISEÑO DE PROTOTIPOS DE BAJO NIVEL</option>
+                <option>R EN CIENCIA DE DATOS</option>
+                <option>CREACIÓN DE APLICACIONES CON POWER APPS </option>
+                <option>LENGUAJE DE MODELADO UNIFICADO (UML)</option>
+                <option>IA COMO HERRAMIENTA PARA EL APRENDIZAJE</option>
+                <option>COMUNICACIÓN SERIAL EN ARDUINO</option>
+                <option>ANÁLISIS Y DISEÑO DE SOFTWARE</option>
+                <option>SCRUM</option>
+                <option>ADMINISTRA TUS PROYECTOS CON SW PROJECT</option>
+                <option>HERRAMIENTAS PARA CONTROL DEL TALENTO HUMANO</option>
+                <option>EVALUACIÓN DE ACCESIBILIDAD</option>
+                <option>PROGRAMACIÓN EN OCTAVE</option>
+                <option>CÁLCULO DIFERENCIAL PARA TICS</option>
+                <option>DESARROLLO DE PROYECTOS DE SW CON SCRUM</option>
+                <option>GUERRA DE CODIGO</option>
+                <option>TORNEO SMASH</option>
+                <option>TORNEO FUTBOL VIRTUAL</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+        </div>
+    </form>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
